@@ -1,7 +1,8 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Stack, Center, Box, Button, Text } from "@chakra-ui/react";
 import TimerConfig from "../_config";
+import { TimerSound } from "../_types";
 
 // Define initial state and type
 interface TimerState {
@@ -28,8 +29,15 @@ const initialState: TimerState = {
   cycleCount: 0,
 };
 
+const initialTimerSound: TimerSound = {
+  name: "Kitchen",
+  file: "/kitchen_timer.mp3",
+  label: "Kitchen Timer",
+}
+
 const Timer = () => {
   const [state, setState] = useState(initialState);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     // initial cycle count set from localStorage
@@ -37,10 +45,17 @@ const Timer = () => {
   }, []);
 
   useEffect(() => {
+    const audioVolume = 70
+    if (audioRef.current) {
+      audioRef.current.volume = audioVolume / 100;
+    }
+  }, []);
+
+  useEffect(() => {
     let interval: any = null;
 
     if (state.isRunning) {
-      interval = setInterval(() => {
+      interval = setInterval(async () => {
         const { minutes, seconds, cycle } = state;
 
         if (minutes === 0 && seconds === 0) {
@@ -61,6 +76,9 @@ const Timer = () => {
             cycleCount: updatedCycleCount, // increment on end of work cycle
           }));
           if (isWorkCycle) {
+            if (audioRef.current) {
+              await audioRef.current.play();
+            }
             // Only update localStorage after a work cycle
             if (typeof window !== "undefined") {
               window.localStorage.setItem(
@@ -89,6 +107,7 @@ const Timer = () => {
   };
 
   return (
+    <>
     <Center h="100vh">
       <Box w="80%" maxW="400px">
         <Stack spacing={4} direction="column" alignItems="center">
@@ -127,6 +146,10 @@ const Timer = () => {
         </Stack>
       </Box>
     </Center>
+    {initialTimerSound.file && (
+      <audio ref={audioRef} src={initialTimerSound.file} crossOrigin="anonymous" />
+    )}
+    </>
   );
 };
 
