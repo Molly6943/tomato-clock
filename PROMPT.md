@@ -4,7 +4,7 @@ Pomodoro Timer React, NextJS
 
 **Motivation:**
 
-I requested guidance for building a Pomodoro Timer (Tomato Clock) using React, NextJS, TypeScript, and Chakra UI with the following specifications:
+*I requested guidance for building a Pomodoro Timer (Tomato Clock) using React, NextJS, TypeScript, and Chakra UI with the following specifications:*
 
 **My Prompt:**
 
@@ -32,7 +32,6 @@ states and props.
 3. Chakra UI: Use Chakra UI components for the layout, buttons, and timer
 display. Ensure the application is responsive and aesthetically pleasing.
 
----
 Could you share how to do it? Implement it step by step and share details with me.
 
 **Response:**
@@ -61,7 +60,7 @@ The response provided a well-structured solution which uses a conditional (terna
 
 **Motivation:**
 
-"After implementing the timer, I noticed that the 5-minute break timer doesn't start automatically after the 25-minute work timer completes and realised I need to adjust this. Therefore, I asked ChatGPT for a solution to this issue."
+*"After implementing the timer, I noticed that the 5-minute break timer doesn't start automatically after the 25-minute work timer completes and realised I need to adjust this. Therefore, I asked ChatGPT for a solution to this issue."*
 
 **My Prompt:**
 
@@ -99,7 +98,7 @@ This response provided a concise and effective solution to implement the functio
 
 **Motivation:**
 
-"I needed to display the number of complete work/break cycles in the timer. Therefore, I prompted ChatGPT to provide a solution for implementing a cycle counter."
+*"I needed to display the number of complete work/break cycles in the timer. Therefore, I prompted ChatGPT to provide a solution for implementing a cycle counter."*
 
 **My Prompt**
 
@@ -116,7 +115,7 @@ ChatGPT offered a solution to implement a cycle counter by adding a new state va
 
 **Motivation:**
 
-"I was considering the use of localStorage or zustand for state management in my application. I asked ChatGPT to compare these options based on the application requirements, sharing the pros and cons for each to determine the most suitable choice."
+*"I was considering the use of localStorage or zustand for state management in my application. I asked ChatGPT to compare these options based on the application requirements, sharing the pros and cons for each to determine the most suitable choice."*
 
 **My Prompt**
 
@@ -133,7 +132,7 @@ Based on the explanation, for a simple cycle counter scenario where persistence 
 
 **Motivation:**
 
-"I am considering using localStorage to store the cycle count in the browser for a single user usage scenario. I asked ChatGPT for an updated version of the code using localStorage."
+*"I am considering using localStorage to store the cycle count in the browser for a single user usage scenario. I asked ChatGPT for an updated version of the code using localStorage."*
 
 **My Prompt**
 
@@ -155,7 +154,7 @@ The response correctly provides a way to implement cycle count storage using loc
 
 **Motivation:**
 
-"During the development of my timer application, I encountered a React hydration error stating 'Text content did not match. Server: 0 Client: 18'. I asked ChatGPT why this error was present and how to fix it."
+*"During the development of my timer application, I encountered a React hydration error stating 'Text content did not match. Server: 0 Client: 18'. I asked ChatGPT why this error was present and how to fix it."*
 
 **My Prompt:**
 
@@ -175,7 +174,7 @@ The provided solution was to delay the hydration of the component until we're re
 
 **Motivation:**
 
-"I asked ChatGPT to guide me on how to use Jest to test all the React components in my application."
+*"I asked ChatGPT to guide me on how to use Jest to test all the React components in my application."*
 
 **My Prompt:**
 
@@ -191,7 +190,8 @@ I use it to write test for different components, convert them to use typestcript
 # Centering Content Vertically and Horizontally with Chakra UI
 
 **Motivation:**
-"I asked ChatGPT to guide me on how to center content both vertically and horizontally using Chakra UI."
+
+*"I asked ChatGPT to guide me on how to center content both vertically and horizontally using Chakra UI."*
 
 **Prompt Used:**
 How to center vertically and horizontally with Chakra UI"

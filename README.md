@@ -29,6 +29,11 @@ Start the development server:
 npm run dev
 ```
 
+Test:
+```bash
+npm test
+```
+
 The development server is now live at http://localhost:3000.
 
 ## License
