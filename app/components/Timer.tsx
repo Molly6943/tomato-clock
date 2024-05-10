@@ -103,7 +103,7 @@ const Timer = () => {
           >
             {state.isRunning ? "Pause" : "Start"}
           </Button>
-          <Button ml={4} onClick={() => setState(initialState)}>
+          <Button ml={4} onClick={() => setState(() => ({...initialState, cycleCount: getCycleCount()}))}>
             Reset
           </Button>
         </Box>
