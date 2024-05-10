@@ -116,7 +116,7 @@ const Timer = () => {
   return (
     <>
     <Center h="100vh">
-      <Box w="80%" maxW="400px">
+      <Box w="100%" maxW="600px">
         <Stack spacing={4} direction="column" alignItems="center">
           <TimerDisplay {...state} />
           <Box display="flex" justifyContent="center" alignItems="center">

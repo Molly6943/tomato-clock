@@ -22,7 +22,7 @@ const TimerDisplay: React.FC<TimerDisplayProps> = ({
   return (
     <>
       <Box display="flex" justifyContent="end" alignItems="end">
-        <Text fontSize="1xl">Complete work cycles.: {cycleCount}</Text>
+        <Text fontSize="1xl">Complete work cycles: {cycleCount}</Text>
       </Box>
       <Text fontWeight={600} fontSize="4xl">
         {cycle} Time
