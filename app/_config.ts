@@ -1,8 +1,8 @@
 import { TimerConfig } from "./_types";
 
 const defaultTimerConfig: TimerConfig = {
-  workMinutes: 1,
-  breakMinutes: 1,
+  workMinutes: 25,
+  breakMinutes: 5,
   numberOfRounds: 0,
   autoStartBreak: true,
   autoStartWork: true,
