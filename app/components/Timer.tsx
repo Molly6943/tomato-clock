@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Flex, Center, Box, Button, Text } from "@chakra-ui/react";
+import { Stack, Center, Box, Button, Text } from "@chakra-ui/react";
 import TimerConfig from "../_config";
 
 // Define initial state and type
@@ -29,12 +29,11 @@ const initialState: TimerState = {
 };
 
 const Timer = () => {
-
   const [state, setState] = useState(initialState);
 
   useEffect(() => {
     // initial cycle count set from localStorage
-    setState(s => ({ ...s, cycleCount: getCycleCount() }));
+    setState((s) => ({ ...s, cycleCount: getCycleCount() }));
   }, []);
 
   useEffect(() => {
@@ -90,25 +89,44 @@ const Timer = () => {
   };
 
   return (
-    <Flex>
-      <Center>
-        <Box>
-          <Text fontSize="1xl" color={state.cycle === "Work" ? "green" : "red"}>
+    <Center h="100vh">
+      <Box w="80%" maxW="400px">
+        <Stack spacing={4} direction="column" alignItems="center">
+          <Box display="flex" justifyContent="end" alignItems="end">
+            <Text fontSize="1xl">Complete work cycles.: {state.cycleCount}</Text>
+          </Box>
+          <Text
+            fontWeight={600}
+            fontSize="4xl"
+          >
             {state.cycle} Time
           </Text>
-          <Text fontSize="1xl">Rounds: {state.cycleCount}</Text>
-          <Text fontSize="8xl">{formatTime(state)}</Text>
-          <Button
-            onClick={() => setState((s) => ({ ...s, isRunning: !s.isRunning }))}
-          >
-            {state.isRunning ? "Pause" : "Start"}
-          </Button>
-          <Button ml={4} onClick={() => setState(() => ({...initialState, cycleCount: getCycleCount()}))}>
-            Reset
-          </Button>
-        </Box>
-      </Center>
-    </Flex>
+          <Text fontSize="8xl" color="white">
+            {formatTime(state)}
+          </Text>
+          <Box display="flex" justifyContent="center" alignItems="center">
+            <Button
+              onClick={() =>
+                setState((s) => ({ ...s, isRunning: !s.isRunning }))
+              }
+            >
+              {state.isRunning ? "Pause" : "Start"}
+            </Button>
+            <Button
+              ml={4}
+              onClick={() =>
+                setState(() => ({
+                  ...initialState,
+                  cycleCount: getCycleCount(),
+                }))
+              }
+            >
+              Reset
+            </Button>
+          </Box>
+        </Stack>
+      </Box>
+    </Center>
   );
 };
 
